@@ -7,7 +7,7 @@ For each score print:
 - "medium" if score >= 50
 - "low"    otherwise
 """
-
+# ToDo: loop and classify each score eith if / elif / else
 if __name__ == "__main__":
     scores = [20, 75, 45, 90, 50, 81]
 

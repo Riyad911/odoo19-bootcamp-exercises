@@ -5,7 +5,7 @@ Print name, email, and revenue for leads where:
 - active is True
 - revenue >= 2000
 """
-
+# TODO: loop and print matching leads with formatted output
 if __name__ == "__main__":
     leads = [
         {"name": "Deal A", "email": "a@co.com", "revenue": 5000, "active": True},
@@ -14,10 +14,9 @@ if __name__ == "__main__":
         {"name": "Deal D", "email": "d@co.com", "revenue": 2500, "active": True},
         {"name": "Deal E", "email": "e@co.com", "revenue": 1200, "active": True},
     ]
-
     min_revenue = 2000
-
     print(f" Active Leads with revenue >= {min_revenue:,.2f} :")
     for lead in leads:
         if lead["active"] and lead["revenue"] >= min_revenue:
-            print(f" - {lead['name']} : {lead['email']} : {lead['revenue']:,.2f}")
+            print(f" - {lead['name']}, {lead['email']}, {lead['revenue']:,.2f}")
+
