@@ -39,6 +39,9 @@ if __name__ == "__main__":
             seen_emails.append(email)
             unique_leads.append(lead)
 
+    print(f"\nBefore: {len(leads)} leads")
+    print(f"After:  {len(unique_leads)} unique emails")
+
     print("\nUnique leads:")
     for lead in unique_leads:
         print(
