@@ -29,12 +29,14 @@ if __name__ == "__main__":
     for lead in leads:
         try:
             validate_lead(lead)
-            valid_leads.append(lead)
         except ValueError as e:
             _logger.error(f"Invalid lead: {lead} {e}")
-
+        else:
+            valid_leads.append(lead)
     # TODO: print build_stage_report(valid_leads)
-    print(build_stage_report(valid_leads))
-
+    report = build_stage_report(valid_leads)
+    for stage, count in report.items():
+        print(f"{stage}:{count}")
     # TODO: print total_revenue(valid_leads)
     print(f"The Total of revenues is: {total_revenue(valid_leads):,.2f}")
+    #TODO: Add `test_validators.py` with simple `assert` statements (or use pytest).

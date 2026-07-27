@@ -14,7 +14,8 @@ def total_revenue(leads):
     # TODO: total_revenue(leads)` — returns sum of revenue
     total = 0
     for lead in leads:
-        amount = lead.get("revenue", 0)
-        total += amount
-
+        total += lead.get("revenue", 0)
     return total
+
+# another solution:
+# return sum(lead.get("revenue", 0) for lead in leads)
