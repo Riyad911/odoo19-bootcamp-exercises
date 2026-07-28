@@ -4,7 +4,11 @@
 # Loop leads with try/except — print valid, show error for invalid.
 
 def is_valid_email(email):
-    return ("@" in email) and ("." in email)
+    if not email or not isinstance(email, str):
+        return False
+    if "@" not in email.split("@")[0] and "." not in email.split("@")[-1]:
+        return False
+    return True
 
 
 def validate_lead(lead):
