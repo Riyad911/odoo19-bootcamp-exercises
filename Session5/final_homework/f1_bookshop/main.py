@@ -50,7 +50,10 @@ _logger = logging.getLogger(__name__)
 # --- PART 1: clerk intro ---
 # TODO: ask clerk name + branch city, print welcome banner (f-strings)
 
-name
+name = input("Write your name: ")
+city = input("Write your branch city: ")
+print(f"welcome {name} in {city} branch")
+
 # --- PART 2 data (with duplicate ISBNs and 1-2 invalid books) ---
 raw_books = [
     {"title": "Python 101", "author": "Ada", "isbn": "PY101", "genre": "tech", "stock": 5, "price": 120.0},
@@ -65,6 +68,9 @@ raw_books = [
 
 # TODO PART 2 + 3:
 # 1) print before count
+print(f"The number of book before delete: {len(raw_books)}")
 # 2) remove_duplicate_isbn
+unique_books = remove_duplicate_isbn(raw_books)
+print(f"The number of book after delete: {len(unique_books)}")
 # 3) validate each unique book (try/except + _logger.warning) -> valid list
 # 4) print all the reports on VALID books
