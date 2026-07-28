@@ -8,10 +8,15 @@
 
 
 def is_valid_isbn(isbn):
-    # TODO
-    pass
-
+    return isinstance(isbn, str) and isbn and len(isbn) >= 5
 
 def validate_book(book):
     # TODO: raise ValueError with a clear message
-    pass
+    if not book["title"]:
+        raise ValueError("Title is required.")
+    elif not is_valid_isbn(book["isbn"]):
+        raise ValueError("Invalid ISBN.")
+    elif book["price"] < 0:
+        raise ValueError("Price cannot be negative.")
+    return True
+

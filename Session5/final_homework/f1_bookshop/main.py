@@ -33,7 +33,16 @@
 import logging
 
 # TODO: import validate_book from shop_tools.validators
+from shop_tools.validators import validate_book
 # TODO: import the report functions you need from shop_tools.reports
+from shop_tools.reports import (
+    remove_duplicate_isbn,
+    count_by_genre,
+    total_stock_value,
+    average_price_by_genre,
+    out_of_stock_titles,
+    unique_authors)
+
 
 logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
@@ -41,6 +50,7 @@ _logger = logging.getLogger(__name__)
 # --- PART 1: clerk intro ---
 # TODO: ask clerk name + branch city, print welcome banner (f-strings)
 
+name
 # --- PART 2 data (with duplicate ISBNs and 1-2 invalid books) ---
 raw_books = [
     {"title": "Python 101", "author": "Ada", "isbn": "PY101", "genre": "tech", "stock": 5, "price": 120.0},
