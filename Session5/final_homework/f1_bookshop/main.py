@@ -73,4 +73,17 @@ print(f"The number of book before delete: {len(raw_books)}")
 unique_books = remove_duplicate_isbn(raw_books)
 print(f"The number of book after delete: {len(unique_books)}")
 # 3) validate each unique book (try/except + _logger.warning) -> valid list
+valid_list = []
+for book in unique_books:
+    try:
+        validate_book(book)
+        valid_list.append(book)
+    except ValueError as e:
+        _logger.warning("%s", e)
 # 4) print all the reports on VALID books
+print(f"count_by_genre: {count_by_genre(valid_list)}")
+print(f"total_stock_value: ${total_stock_value(valid_list):,.2f}")
+print(average_price_by_genre(valid_list))
+print(out_of_stock_titles(valid_list))
+print(unique_authors(valid_list))
+
