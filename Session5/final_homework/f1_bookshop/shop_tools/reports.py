@@ -29,23 +29,17 @@ def total_stock_value(books):
 
 def average_price_by_genre(books):
     # TODO: {"kids": 30.0, "tech": 120.0, ...}
-    report = {}
+    counts = {}
+    total = {}
 
     for book in books:
-        genre = book.get("genre", "Unknown")
-        price = book.get("price", 0)
-
-        if genre not in report:
-            report[genre] = {"total": 0, "count": 0}
-
-        report[genre]["total"] += price
-        report[genre]["count"] += 1
+        genre = book["genre"]
+        counts[genre] = counts.get(genre, 0) + 1
+        total[genre] = total.get(genre, 0) + book["price"]
 
     averages = {}
-
-    for genre, data in report.items():
-        averages[genre] = data["total"] / data["count"]
-
+    for genre in counts:
+        averages[genre] = total[genre] / counts[genre]
     return averages
 
 

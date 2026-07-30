@@ -41,8 +41,8 @@ from shop_tools.reports import (
     total_stock_value,
     average_price_by_genre,
     out_of_stock_titles,
-    unique_authors)
-
+    unique_authors,
+)
 
 logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
