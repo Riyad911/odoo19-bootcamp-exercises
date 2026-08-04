@@ -28,6 +28,7 @@ class LeadRepository:
     # TODO: find_by_stage(self, stage) → return matching leads
 
     def find_by_stage(self, stage):
+        print(self.__records)
         return [lead for lead in self.__records if lead.stage == stage]
 
     # TODO: total_revenue(self) → sum of lead.revenue
